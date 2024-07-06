@@ -1,0 +1,461 @@
+/* ---------------
+  Header Section
+  ---------------- */
+
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 20px 0 0;
+}
+
+.header-wrapper {
+  justify-content: flex-end;
+}
+
+.header .nav-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  margin: 0 15px;
+  z-index: 1;
+}
+
+.header .nav-toggler span {
+  height: 2px;
+  width: 24px;
+  background-color: var(--main-color);
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.header .active .nav-toggler span {
+  background-color: transparent;
+}
+
+.header .nav-toggler span::before,
+.header .nav-toggler span::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.header .nav-toggler span::before {
+  left: 0;
+  transform: translateY(-8px);
+}
+
+.header .active .nav-toggler span::before {
+  transform: rotate(45deg);
+}
+
+.header .nav-toggler span::after {
+  right: 0;
+  transform: translateY(8px);
+}
+
+.header .active .nav-toggler span::after {
+  transform: rotate(-45deg);
+}
+
+.header .row:not(.active) .nav-toggler:hover span::before,
+.header .row:not(.active) .nav-toggler:hover span::after {
+  width: 50%;
+}
+
+.header .nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 35px 15px;
+  overflow-y: auto;
+}
+
+.nav-visibility {
+  visibility: hidden;
+}
+
+.header .nav-inner {
+  min-height: calc(100vh - 70px);
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  backdrop-filter: var(--backdrop-filter-blur);
+  padding: 50px 0;
+  border-radius: 30px;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.header .active .nav-inner {
+  opacity: 1;
+}
+
+.header .nav-inner ul li {
+  text-align: center;
+}
+
+.header .nav-inner ul li a {
+  font-size: 40px;
+  text-transform: capitalize;
+  color: var(--dark-blue);
+  display: block;
+  font-weight: 600;
+  padding: 8px 15px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.header .nav-inner ul li a:hover {
+  color: var(--main-color);
+}
+
+.header .nav-inner ul li a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  width: 0;
+  background-color: var(--white-alpha-25);
+  z-index: -1;
+  transition: width 0.5s ease;
+}
+
+.header .nav-inner ul li a:hover:before {
+  width: 100%;
+}
+
+/* ---------------
+  Home Section
+  ---------------- */
+
+.home-section {
+  align-items: center;
+  padding: 120px 0;
+}
+
+.home-section.active {
+  display: flex;
+}
+
+.home-text p {
+  font-size: 18px;
+}
+
+.home-text h1 {
+  font-size: 50px;
+  text-transform: capitalize;
+}
+
+.home-text h2 {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 400;
+  margin: 0 0 30px;
+}
+
+.home-text .btn {
+  margin: 0 15px 15px 0;
+}
+
+.home-img .img-box {
+  max-width: 360px;
+  background-color: var(--white-alpha-25);
+  border-radius: 50%;
+  border: 8px solid var(--white-alpha-25);
+  margin: auto;
+  overflow: hidden;
+}
+
+.home-img .img-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transform: scale(1.75);
+}
+
+.home-text,
+.home-img {
+  width: 50%;
+  padding: 15px;
+}
+
+/* ---------------
+  About Section
+  ---------------- */
+
+.about-section {
+  padding: 80px 0;
+}
+
+.about-text {
+  width: 60%;
+  padding: 0 15px;
+}
+
+.about-wrapper {
+  align-items: normal;
+}
+
+.about-img {
+  width: 40%;
+  padding: 0 15px;
+}
+
+.about-img .img-box {
+  background-color: var(--white-alpha-25);
+  max-width: 380px;
+  border: 1px solid var(--white-alpha-40);
+  margin: auto;
+  border-radius: 10px;
+}
+
+.about-img .img-box img {
+  width: 100%;
+  height: auto;
+}
+
+.about-text h3 {
+  text-transform: capitalize;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.about-text .skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-text .skill-item {
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  padding: 5px 15px;
+  text-transform: capitalize;
+  margin: 0 10px 10px 0;
+  border-radius: 20px;
+}
+
+/* ---------------
+  Education/Experience Section
+  ---------------- */
+
+.about-tabs {
+  margin-top: 20px;
+}
+
+.about-tabs .tab-item {
+  padding: 2px 0;
+  background-color: transparent;
+  border: none;
+  text-transform: capitalize;
+  display: inline-block;
+  color: var(--dark-blue);
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 30px 0 0;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-tabs .tab-item:last-child {
+  margin: 0;
+}
+
+.about-tabs .tab-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background-color: var(--dark-blue);
+  transition: width 0.3s ease-in-out;
+}
+
+.about-tabs .tab-item:hover:before {
+  width: 100%;
+}
+
+.about-tabs .active::before {
+  width: 100%;
+  background-color: var(--main-color);
+}
+
+.about-tabs .active {
+  color: var(--main-color);
+  opacity: 1;
+  cursor: auto;
+}
+
+.about-text .timeline {
+  position: relative;
+}
+
+.about-text .timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: var(--main-color);
+  z-index: -1;
+}
+
+.about-text .tab-content {
+  padding: 40px 0;
+}
+
+.about-text .timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+  padding: 10px 0 0 40px;
+}
+
+.about-text .timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 16px;
+  height: 11px;
+  width: 11px;
+  background-color: var(--main-color);
+  border-radius: 50%;
+}
+
+.about-text .timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.about-text .timeline-item .date {
+  display: block;
+  color: var(--main-color);
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.about-text .timeline-item h4 {
+  font-size: 18px;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+}
+
+.about-text .timeline-item .h4 span {
+  font-weight: 600;
+}
+
+.about-text .btn {
+  margin: 0 15px 15px 0;
+}
+
+/* ---------------
+  Contact Me Section
+  ---------------- */
+
+.contact-section {
+  padding: 120px 0;
+}
+
+.contact-wrapper {
+  align-items: normal;
+}
+
+.contact-form,
+.contact-info {
+  width: 50%;
+  padding: 0 15px;
+}
+
+.contact-form .input-group {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.contact-form .input-control {
+  display: block;
+  width: 100%;
+  height: 50%;
+  border-radius: 25px;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--white-alpha-25);
+  padding: 5px 20px;
+  color: var(--dark-blue);
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .input-control::placeholder {
+  color: var(--dark-blue);
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.contact-form .input-control:focus {
+  border-color: var(--white-alpha-40);
+}
+
+.contact-form input.input-control {
+  height: 50px;
+}
+
+.contact-form textarea.input-control {
+  height: 150px;
+  resize: vertical;
+  padding-top: 25px;
+}
+
+.contact-info-item {
+  margin: 0 0 30px;
+  padding: 0 0 0 20px;
+}
+
+.contact-info-item h3 {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin: 0 0 5px;
+}
+
+.contact-info-item .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: var(--white-alpha-25);
+  border: 1px solid var(--white-alpha-40);
+  color: var(--main-color);
+  border-radius: 50%;
+  margin: 6px 6px 0 0;
+  transition: all 0.3s ease;
+}
+
+.contact-info-item .social-links a:hover {
+  background-color: var(--main-color);
+  color: var(--white);
+}
