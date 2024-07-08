@@ -4,7 +4,6 @@ import {
   faFacebook,
   faSquareInstagram,
   faTiktok,
-  faSquareSnapchat,
 } from "@fortawesome/free-brands-svg-icons";
 
 interface ContactMeProps {
@@ -79,24 +78,24 @@ const ContactMe = ({ class_name, ToggleFadeOut }: ContactMeProps) => {
 
           <div className="contact-info">
             <div className="contact-info-item">
-              <h3>Email</h3>
-              <p>example@gmail.com</p>
+              <h3>My Email Address</h3>
+              <p>aluthgemalmi@gmail.com</p>
             </div>
 
             <div className="contact-info-item">
               <h3>Follow Me</h3>
               <div className="social-links">
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.facebook.com/malmi.bhagya.7"
+                  target="_blank"
+                >
                   <FontAwesomeIcon icon={faFacebook} size="lg" />
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://www.instagram.com/malmiii14/" target="_blank">
                   <FontAwesomeIcon icon={faSquareInstagram} size="lg" />
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://www.tiktok.com/@mash1415" target="_blank">
                   <FontAwesomeIcon icon={faTiktok} size="lg" />
-                </a>
-                <a href="#" target="_blank">
-                  <FontAwesomeIcon icon={faSquareSnapchat} size="lg" />
                 </a>
               </div>
             </div>

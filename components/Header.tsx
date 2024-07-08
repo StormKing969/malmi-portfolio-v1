@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 const Header = ({
   setSelectedSection,
@@ -42,7 +42,7 @@ const Header = ({
             <div className="nav-inner">
               <ul>
                 <li onClick={() => handleLinkClick("home")}>
-                  <a href="#home" className="nav-items">
+                  <a href="#" className="nav-items">
                     Home
                   </a>
                 </li>

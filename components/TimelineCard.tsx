@@ -30,7 +30,7 @@ const TimelineCard = ({ id }: { id: string }) => {
 
         {id === "experience" &&
           experienceItems.map(
-            ({ position, company, startDate, endDate, description, index }) => (
+            ({ position, company, startDate, endDate, workSummary, index }) => (
               <TimelineContent
                 key={index}
                 index={index}
@@ -38,7 +38,7 @@ const TimelineCard = ({ id }: { id: string }) => {
                 company={company}
                 startDate={startDate}
                 endDate={endDate}
-                description={description}
+                workSummary={workSummary}
               />
             )
           )}

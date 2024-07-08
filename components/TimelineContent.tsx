@@ -9,6 +9,7 @@ const TimelineContent = ({
   startDate,
   endDate,
   description,
+  workSummary,
 }: {
   index: string;
   degree?: string;
@@ -18,19 +19,24 @@ const TimelineContent = ({
   startDate: string;
   endDate: string;
   description?: string;
+  workSummary?: string[];
 }) => {
   return (
     <div className="timeline-item" id={index}>
       <span className="date">
-        {startDate} - {endDate}
+        {startDate} {endDate !== "" ? " - " + endDate : ""}
       </span>
-      <h4>
-        {degree !== null && degree} {position !== null && position} -{" "}
-        <span>
-          {institution !== null && institution} {company !== null && company}
-        </span>
+      <h3>
+        {degree !== null && degree} {position !== null && position}
+      </h3>
+      <h4 className="location">
+        {institution} {company}
       </h4>
       <p>{description}</p>
+      <ul>
+        {workSummary &&
+          workSummary.map((summary, i) => <li key={i}>{summary}</li>)}
+      </ul>
     </div>
   );
 };

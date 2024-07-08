@@ -22,8 +22,16 @@ export default function Home() {
         setIsActive={setIsActive}
         isActive={isActive}
       />
-      <Hero class_name={selectedSection} ToggleFadeOut={isActive} />
-      <About class_name={selectedSection} ToggleFadeOut={isActive} />
+      <Hero
+        setSelectedSection={setSelectedSection}
+        class_name={selectedSection}
+        ToggleFadeOut={isActive}
+      />
+      <About
+        setSelectedSection={setSelectedSection}
+        class_name={selectedSection}
+        ToggleFadeOut={isActive}
+      />
       <ContactMe class_name={selectedSection} ToggleFadeOut={isActive} />
     </main>
   );

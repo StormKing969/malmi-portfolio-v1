@@ -1,12 +1,18 @@
+import { log } from "console";
 import Image from "next/image";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 interface HeroProps {
   class_name: String;
   ToggleFadeOut: boolean;
+  setSelectedSection: Dispatch<SetStateAction<string>>;
 }
 
-const Hero = ({ class_name, ToggleFadeOut }: HeroProps) => {
+const Hero = ({ class_name, ToggleFadeOut, setSelectedSection }: HeroProps) => {
+  const handleLinkClick = (section: string) => {
+    setSelectedSection(section);
+  };
+
   return (
     <section
       className={
@@ -22,10 +28,14 @@ const Hero = ({ class_name, ToggleFadeOut }: HeroProps) => {
             <p>Hello, I&apos;m</p>
             <h1>Malmi</h1>
             <h2>An upcoming college graduate</h2>
-            <a href="#" className="btn">
+            <a
+              href="#about"
+              className="btn"
+              onClick={() => handleLinkClick("about")}
+            >
               About Me
             </a>
-            <a href="#" className="btn">
+            <a href="./CV.pdf" className="btn" download="Malmi's CV">
               Portfolio
             </a>
           </div>

@@ -1,22 +1,31 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import TimelineCard from "./TimelineCard";
 import { personalDescription, skillList } from "@/data";
 
 interface AboutProps {
   class_name: String;
   ToggleFadeOut: boolean;
+  setSelectedSection: Dispatch<SetStateAction<string>>;
 }
 
-const About = ({ class_name, ToggleFadeOut }: AboutProps) => {
+const About = ({
+  class_name,
+  ToggleFadeOut,
+  setSelectedSection,
+}: AboutProps) => {
   const [selectedTab, setSelectedTab] = useState("education");
   const [isActive, setIsActive] = useState(true);
 
   const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
     setIsActive(!isActive);
+  };
+
+  const handleLinkClick = (section: string) => {
+    setSelectedSection(section);
   };
 
   const skills = skillList.map((skill, index) => (
@@ -69,10 +78,14 @@ const About = ({ class_name, ToggleFadeOut }: AboutProps) => {
 
             <TimelineCard id={selectedTab} />
 
-            <a href="#" className="btn">
+            <a href="./CV.pdf" className="btn" download="Malmi's CV">
               Download CV
             </a>
-            <a href="#" className="btn">
+            <a
+              href="#contact"
+              className="btn"
+              onClick={() => handleLinkClick("contact")}
+            >
               Reach Out
             </a>
           </div>
