@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import PageLoader from "@/components/PageLoader";
+import BackgroundPics from "@/components/BackgroundPics";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -17,6 +19,8 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      {/* <PageLoader /> */}
+      <BackgroundPics />
       <Header
         setSelectedSection={setSelectedSection}
         setIsActive={setIsActive}
