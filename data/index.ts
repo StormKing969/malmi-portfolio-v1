@@ -43,7 +43,7 @@ export const experienceItems = [
   {
     index: "0",
     company: "District General Hospital",
-    position: "Assistance Nurse",
+    position: "Assistant Doctor",
     startDate: "2023",
     endDate: "2024",
     workSummary: [
@@ -57,7 +57,7 @@ export const experienceItems = [
   {
     index: "1",
     company: "Asiri Surgical Hospital",
-    position: "Assistance Nurse",
+    position: "Assistant Nurse",
     startDate: "2022",
     endDate: "",
     workSummary: [
@@ -70,7 +70,7 @@ export const experienceItems = [
   {
     index: "2",
     company: "Nawaloka Hospital",
-    position: "Assistance Nurse",
+    position: "Assistant Nurse",
     startDate: "2020",
     endDate: "",
     workSummary: [
