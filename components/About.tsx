@@ -92,7 +92,7 @@ const About = ({
 
           <div className="about-img">
             <div className="img-box">
-              <Image src="/about.JPG" alt="About Me" width={380} height={700} />
+              <Image src="/about.png" alt="About Me" width={380} height={700} />
             </div>
           </div>
         </div>
